@@ -3,110 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MisaContigo - Tu Compañero Espiritual</title>
+    <title>MisaContigo | Tu Acompañante Espiritual de Nueva Generación</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1A237E;
-            --secondary: #D4AF37;
-            --background: #FFFFFF;
-            --text: #1A237E;
-            --soft: #F8F9FA;
+            --primary-light: #3949AB;
+            --accent: #D4AF37;
+            --bg: #FFFFFF;
+            --surface: #F8FAFC;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --glass: rgba(255, 255, 255, 0.8);
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
+
+        * {
             margin: 0;
-            background-color: var(--background);
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
-        header {
-            background: var(--primary);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
         }
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 2rem;
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
         }
+
+        /* --- Modern Navigation --- */
         nav {
-            background: var(--soft);
-            padding: 1rem;
-            text-align: center;
-            position: sticky;
+            position: fixed;
             top: 0;
-            border-bottom: 1px solid #ddd;
+            width: 100%;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(26, 35, 126, 0.1);
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        nav a {
-            margin: 0 1rem;
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
             color: var(--primary);
             text-decoration: none;
-            font-weight: bold;
+            letter-spacing: -0.5px;
         }
-        h1, h2 { color: var(--primary); }
-        .hero-title { color: white; margin: 0; font-size: 3rem; }
-        .disclaimer {
-            background: #fff3cd;
-            border: 1px solid #ffeeba;
-            padding: 1rem;
-            border-radius: 8px;
-            margin: 2rem 0;
+
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
             font-size: 0.9rem;
+            transition: color 0.3s;
         }
-        footer {
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 10rem 2rem 6rem;
             text-align: center;
-            padding: 2rem;
-            background: var(--soft);
+            background: radial-gradient(circle at top right, #E8EAF6 0%, #FFFFFF 50%);
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-badge {
+            background: var(--primary-light);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            max-width: 600px;
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            animation: fadeInUp 1.4s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(26, 35, 126, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(26, 35, 126, 0.3);
+        }
+
+        /* --- Features Section --- */
+        .features {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background: var(--surface);
+            padding: 3rem 2rem;
+            border-radius: 32px;
+            transition: transform 0.4s;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            background: white;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .card h3 { margin-bottom: 1rem; font-size: 1.5rem; }
+
+        /* --- Disclaimer & Info --- */
+        .info-bar {
+            background: var(--primary);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
             margin-top: 4rem;
         }
-        .btn {
-            background: var(--secondary);
-            color: white;
-            padding: 0.8rem 2rem;
-            text-decoration: none;
-            border-radius: 25px;
+
+        .info-bar p { max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem; opacity: 0.9; }
+
+        .dev-badge {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 20px;
             display: inline-block;
-            margin-top: 1rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 1px solid #eee;
+            background: var(--surface);
+        }
+
+        .footer-links { margin-bottom: 2rem; }
+        .footer-links a { color: var(--text-muted); margin: 0 1rem; text-decoration: none; font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--primary); }
+
+        /* --- Animations --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 3.5rem; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1 class="hero-title">MisaContigo</h1>
-    <p>La fe en tu mano, la paz en tu corazón.</p>
-</header>
-
 <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="privacidad.html">Privacidad</a>
-    <a href="terminos.html">Términos</a>
+    <a href="#" class="logo">MisaContigo</a>
+    <div class="nav-links">
+        <a href="#experiencia">Experiencia</a>
+        <a href="privacidad.html">Privacidad</a>
+        <a href="terminos.html">Términos</a>
+        <a href="mailto:spidermxone@gmail.com" class="btn-primary" style="padding: 0.6rem 1.5rem; border-radius: 10px;">Soporte</a>
+    </div>
 </nav>
 
-<div class="container" id="inicio">
-    <h2>Sobre la Aplicación</h2>
-    <p>MisaContigo es una aplicación diseñada para acompañar la vida de fe de los católicos de habla hispana. Con un enfoque especial en la sencillez para adultos mayores y la profundidad espiritual para toda la familia.</p>
+<section class="hero">
+    <div class="hero-badge">Tecnología al Servicio de la Fe</div>
+    <h1>Tu encuentro diario <br> con lo Sagrado.</h1>
+    <p>La primera aplicación católica diseñada para unir a la familia latinoamericana a través de la oración profunda y la sencillez tecnológica.</p>
+    <div class="cta-group">
+        <a href="#" class="btn-primary">Descargar en Google Play</a>
+    </div>
+</section>
 
-    <ul>
-        <li><strong>Guía de Misa:</strong> Sigue la Eucaristía paso a paso con las lecturas oficiales.</li>
-        <li><strong>El Santo del Día:</strong> Conoce la vida de quienes nos precedieron en la fe.</li>
-        <li><strong>Círculo de Familia:</strong> Mantén vivas tus intenciones de oración por tus seres queridos.</li>
-        <li><strong>Lectio Divina:</strong> Un retiro espiritual diario en la palma de tu mano.</li>
-        <li><strong>Confesa:</strong> Prepárate para el sacramento con nuestro examen de conciencia guiado.</li>
-    </ul>
-
-    <div class="disclaimer">
-        <strong>Aviso Importante:</strong> MisaContigo es una herramienta informativa y de apoyo espiritual. No sustituye la presencia física en la Santa Misa ni reemplaza la guía de un sacerdote.
+<section class="features" id="experiencia">
+    <div class="section-header">
+        <h2>Un Misal Digital para el 2026</h2>
+        <p>Minimalismo, paz y tradición en cada paso.</p>
     </div>
 
-    <h2>Contacto</h2>
-    <p>Desarrollada por: <strong>Diego Torres Barragán</strong></p>
-    <p>Soporte: <a href="mailto:spidermxone@gmail.com">spidermxone@gmail.com</a></p>
-</div>
+    <div class="grid">
+        <div class="card">
+            <span class="card-icon">📖</span>
+            <h3>Guía Total de Misa</h3>
+            <p>Sigue la celebración eucarística con las lecturas oficiales sincronizadas automáticamente con tu país.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">📿</span>
+            <h3>Santo Rosario Oficial</h3>
+            <p>Reza la devoción completa con misterios automáticos y una guía visual táctil de última generación.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">🔑</span>
+            <h3>Confesa: El Examen</h3>
+            <p>Prepara tu corazón para el sacramento con una guía interactiva de examen de conciencia y rito sacramental.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">🕯️</span>
+            <h3>Círculo de Familia</h3>
+            <p>Enciende velas virtuales y mantén vivas las intenciones por tus seres queridos de forma persistente.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">🕊️</span>
+            <h3>Lectio Divina</h3>
+            <p>Conviértete en un contemplador de la Palabra con nuestro retiro guiado paso a paso.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">✨</span>
+            <h3>El Cireneo AI</h3>
+            <p>Soporte de inteligencia artificial para resolver dudas de fe y generar reflexiones espirituales profundas.</p>
+        </div>
+    </div>
+</section>
+
+<section class="info-bar">
+    <p>MisaContigo es un proyecto independiente nacido de la devoción y el deseo de acompañar a nuestros adultos mayores y familias en su camino al Cielo.</p>
+    <div class="dev-badge">
+        <p style="margin-bottom: 0.5rem; font-weight: 800; font-size: 1.2rem;">Diego Torres Barragán</p>
+        <span style="font-size: 0.9rem; opacity: 0.7;">Arquitecto y Desarrollador</span>
+    </div>
+</section>
 
 <footer>
-    <p>&copy; 2024 MisaContigo - Diego Torres Barragán</p>
+    <div class="footer-links">
+        <a href="privacidad.html">Privacidad</a>
+        <a href="terminos.html">Términos</a>
+        <a href="mailto:spidermxone@gmail.com">Soporte</a>
+    </div>
+    <p style="color: var(--text-muted); font-size: 0.8rem;">&copy; 2026 MisaContigo. Todos los derechos reservados. <br> Ciudad de México, Latinoamérica.</p>
 </footer>
 
 </body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misa Contigo | Tu Acompañante Espiritual de Nueva Generación</title>
+    <title>MisaContigo | Tu Misal Digital y Acompañante Espiritual</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
@@ -74,6 +74,9 @@
 
         .nav-links a.btn-primary {
             color: white !important;
+            background: var(--primary);
+            padding: 0.6rem 1.5rem;
+            border-radius: 10px;
         }
 
         .nav-links a:hover {
@@ -120,13 +123,7 @@
             animation: fadeInUp 1.2s ease;
         }
 
-        .cta-group {
-            display: flex;
-            gap: 1rem;
-            animation: fadeInUp 1.4s ease;
-        }
-
-        .btn-primary {
+        .btn-download {
             background: var(--primary);
             color: white;
             padding: 1rem 2.5rem;
@@ -137,7 +134,7 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .btn-primary:hover {
+        .btn-download:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(26, 35, 126, 0.3);
         }
@@ -168,6 +165,8 @@
             border-radius: 32px;
             transition: transform 0.4s;
             border: 1px solid rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
@@ -184,7 +183,7 @@
 
         .card h3 { margin-bottom: 1rem; font-size: 1.5rem; }
 
-        /* --- Disclaimer & Info --- */
+        /* --- Info Bar --- */
         .info-bar {
             background: var(--primary);
             color: white;
@@ -194,14 +193,6 @@
         }
 
         .info-bar p { max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem; opacity: 0.9; }
-
-        .dev-badge {
-            background: rgba(255,255,255,0.1);
-            padding: 1.5rem;
-            border-radius: 20px;
-            display: inline-block;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
 
         /* --- Footer --- */
         footer {
@@ -215,7 +206,6 @@
         .footer-links a { color: var(--text-muted); margin: 0 1rem; text-decoration: none; font-size: 0.9rem; }
         .footer-links a:hover { color: var(--primary); }
 
-        /* --- Animations --- */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -234,74 +224,79 @@
 <body>
 
 <nav>
-    <a href="#" class="logo">Misa Contigo</a>
+    <a href="#" class="logo">MisaContigo</a>
     <div class="nav-links">
-        <a href="#experiencia">Experiencia</a>
+        <a href="#funcionalidades">Funcionalidades</a>
         <a href="privacidad.html">Privacidad</a>
         <a href="terminos.html">Términos</a>
-        <a href="mailto:spidermxone@gmail.com" class="btn-primary" style="padding: 0.6rem 1.5rem; border-radius: 10px;">Soporte</a>
+        <a href="mailto:spidermxone@gmail.com" class="btn-primary">Soporte</a>
     </div>
 </nav>
 
 <section class="hero">
     <div class="hero-badge">Tecnología al Servicio de la Fe</div>
     <h1>Tu encuentro diario <br> con lo Sagrado.</h1>
-    <p>La primera aplicación católica diseñada para unir a la familia latinoamericana a través de la oración profunda y la sencillez tecnológica.</p>
+    <p>La aplicación católica definitiva para México, con lecturas oficiales, oraciones tradicionales y conexión familiar en tiempo real.</p>
     <div class="cta-group">
-        <a href="https://play.google.com/store/apps/details?id=com.spidermx.misacontigo" class="btn-primary">Descargar en Google Play</a>
+        <a href="#" class="btn-download">Descargar en Google Play</a>
     </div>
 </section>
 
-<section class="features" id="experiencia">
+<section class="features" id="funcionalidades">
     <div class="section-header">
-        <h2>Un Misal Digital para el 2026</h2>
-        <p>Minimalismo, paz y tradición en cada paso.</p>
+        <h2>Un Misal Digital Completo</h2>
+        <p>Precisión, tradición y paz en la palma de tu mano.</p>
     </div>
 
     <div class="grid">
         <div class="card">
             <span class="card-icon">📖</span>
-            <h3>Guía Total de Misa</h3>
-            <p>Sigue la celebración eucarística con las lecturas oficiales sincronizadas automáticamente con tu país.</p>
+            <h3>Guía de Misa Oficial</h3>
+            <p>Sigue la Eucaristía con las lecturas íntegras de <strong>misal.mx</strong>. Diferenciación clara entre sacerdote y asamblea para una participación perfecta.</p>
         </div>
         <div class="card">
             <span class="card-icon">📿</span>
-            <h3>Santo Rosario Oficial</h3>
-            <p>Reza la devoción completa con misterios automáticos y una guía visual táctil de última generación.</p>
-        </div>
-        <div class="card">
-            <span class="card-icon">🔑</span>
-            <h3>Confesa: El Examen</h3>
-            <p>Prepara tu corazón para el sacramento con una guía interactiva de examen de conciencia y rito sacramental.</p>
+            <h3>Santo Rosario Íntegro</h3>
+            <p>Manual completo basado en el rezo tradicional. Incluye meditaciones bíblicas, jaculatorias y letanías para cada día de la semana.</p>
         </div>
         <div class="card">
             <span class="card-icon">🕯️</span>
             <h3>Círculo de Familia</h3>
-            <p>Enciende velas virtuales y mantén vivas las intenciones por tus seres queridos de forma persistente.</p>
-        </div>
-        <div class="card">
-            <span class="card-icon">🕊️</span>
-            <h3>Lectio Divina</h3>
-            <p>Conviértete en un contemplador de la Palabra con nuestro retiro guiado paso a paso.</p>
+            <p>Conéctate con tus seres queridos. Comparte intenciones y únete en oración en tiempo real a través de nuestra red segura en la nube.</p>
         </div>
         <div class="card">
             <span class="card-icon">✨</span>
-            <h3>Soporte Espiritual</h3>
-            <p>Accede a reflexiones y guía espiritual basada en la fe católica para acompañar tu camino diario.</p>
+            <h3>Reflexiones con IA</h3>
+            <p>Recibe guías espirituales personalizadas basadas en el Evangelio del día, diseñadas para brindar consuelo y esperanza.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">🙏</span>
+            <h3>Biblioteca de Oraciones</h3>
+            <p>Accede a oraciones universales (como San Miguel Arcángel) y locales de México, disponibles incluso sin conexión a internet.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">🎨</span>
+            <h3>Temas Personalizados</h3>
+            <p>Elige la atmósfera que prefieras: desde el estilo Solemne del Vaticano hasta el modo Media Noche para una oración tranquila.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">⛪</span>
+            <h3>Confesa: Examen de Conciencia</h3>
+            <p>Prepara tu corazón para el sacramento con una guía interactiva basada en los mandamientos y el rito oficial.</p>
         </div>
         <div class="card">
             <span class="card-icon">🤝</span>
             <h3>El Ofertorio</h3>
-            <p>Apoya el mantenimiento de la aplicación mediante ofrendas voluntarias seguras a través de Google Play.</p>
+            <p>Apoya el mantenimiento de esta misión digital mediante ofrendas voluntarias seguras a través del sistema oficial de Google Play.</p>
         </div>
     </div>
 </section>
 
 <section class="info-bar">
-    <p>Misa Contigo es un proyecto independiente nacido de la devoción y el deseo de acompañar a nuestros adultos mayores y familias en su camino al Cielo.</p>
-    <div class="dev-badge">
-        <p style="margin-bottom: 0.5rem; font-weight: 800; font-size: 1.2rem;">Diego Torres Barragán</p>
-        <span style="font-size: 0.9rem; opacity: 0.7;">Arquitecto y Desarrollador</span>
+    <p>MisaContigo es un proyecto independiente nacido de la devoción y el deseo de acompañar a las familias en su camino al Cielo.</p>
+    <div style="font-size: 0.9rem; opacity: 0.8;">
+        <p style="font-weight: 800;">Diego Torres Barragán</p>
+        <span>Desarrollador y Creador</span>
     </div>
 </section>
 
@@ -311,7 +306,7 @@
         <a href="terminos.html">Términos</a>
         <a href="mailto:spidermxone@gmail.com">Soporte</a>
     </div>
-    <p style="color: var(--text-muted); font-size: 0.8rem;">&copy; 2026 Misa Contigo. Todos los derechos reservados. <br> Ciudad de México, México.</p>
+    <p style="color: var(--text-muted); font-size: 0.8rem;">&copy; 2026 MisaContigo. Todos los derechos reservados. <br> Ciudad de México, Latinoamérica.</p>
 </footer>
 
 </body>

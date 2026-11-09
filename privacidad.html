@@ -26,28 +26,26 @@
         <h2>1. Recopilación de Datos y Propósito</h2>
         <p>Nuestra aplicación ha sido diseñada bajo el principio de <strong>privacidad por diseño</strong>. Los datos se manejan de la siguiente manera:</p>
         <ul>
-            <li><strong>Círculo de Familia:</strong> Los nombres e intenciones que comparte en el Círculo de Familia se almacenan de forma segura en Google Firebase (Firestore) para permitir la sincronización en tiempo real entre los miembros de su grupo familiar. Estos datos son privados para su grupo.</li>
-            <li><strong>Inteligencia Artificial:</strong> Las solicitudes de reflexiones espirituales se procesan de forma anónima a través de la API de Google Gemini. Las respuestas pueden ser almacenadas en nuestra base de datos global (sin identificar al usuario) para optimizar el servicio a otros fieles.</li>
-            <li><strong>Información Financiera:</strong> MisaContigo utiliza el sistema de facturación oficial de Google Play para las ofrendas (suscripciones y pagos únicos). Nosotros <strong>no recolectamos ni almacenamos</strong> datos de sus tarjetas de crédito o métodos de pago; esa información es gestionada exclusivamente por Google.</li>
-            <li><strong>Autenticación:</strong> Utilizamos autenticación anónima de Firebase para identificar de forma segura su pertenencia a un grupo familiar sin requerir correos electrónicos ni contraseñas personales.</li>
+            <li><strong>Círculo de Familia e Intenciones:</strong> Los nombres de familiares/amigos y las intenciones que comparte se almacenan de forma segura en Google Firebase (Firestore) para permitir la sincronización en tiempo real y la gestión colaborativa (oración única por usuario y eliminación de intenciones).</li>
+            <li><strong>Android Auto y Reproducción de Audio:</strong> La función de Android Auto y reproducción de audio por voz utiliza los servicios de síntesis de voz locales (`TextToSpeech`) del dispositivo y Media3 de forma local, sin registrar ni transmitir grabaciones de voz a servidores externos.</li>
+            <li><strong>Inteligencia Artificial:</strong> Las solicitudes de reflexiones espirituales se procesan de forma anónima a través de la API de Google Gemini.</li>
+            <li><strong>Información Financiera:</strong> MisaContigo utiliza el sistema de facturación oficial de Google Play para las ofrendas. Nosotros <strong>no recolectamos ni almacenamos</strong> datos de sus tarjetas de crédito o métodos de pago.</li>
+            <li><strong>Autenticación:</strong> Utilizamos autenticación anónima de Firebase para identificar de forma segura su participación en círculos familiares sin requerir contraseñas personales.</li>
         </ul>
 
         <h2>2. Almacenamiento Local</h2>
-        <p>Sus preferencias de tema, país seleccionado y oraciones marcadas como favoritas se guardan localmente en su dispositivo mediante la tecnología DataStore de Android.</p>
+        <p>Sus preferencias de tema, país seleccionado y oraciones marcadas como favoritas se guardan localmente en su dispositivo mediante DataStore.</p>
 
         <h2>3. Terceros y Servicios</h2>
-        <p>Para el funcionamiento técnico, utilizamos servicios confiables de Google:</p>
+        <p>Utilizamos servicios confiables de Google:</p>
         <ul>
-            <li><strong>Firebase:</strong> Para la sincronización del Círculo de Familia y el caché de la liturgia.</li>
-            <li><strong>Gemini API:</strong> Para la generación de reflexiones y oraciones dinámicas.</li>
-            <li><strong>Google Play Billing:</strong> Para el procesamiento seguro de donaciones voluntarias.</li>
+            <li><strong>Firebase:</strong> Sincronización del Círculo de Familia e Intenciones.</li>
+            <li><strong>Gemini API:</strong> Generación de reflexiones y catequesis.</li>
+            <li><strong>Google Play Billing:</strong> Procesamiento seguro de ofrendas.</li>
         </ul>
 
-        <h2>4. Seguridad</h2>
-        <p>Implementamos medidas técnicas para proteger sus datos, incluyendo el aislamiento de claves API y el uso de protocolos de comunicación seguros (HTTPS).</p>
-
-        <h2>5. Contacto</h2>
-        <p>Para cualquier duda sobre el manejo de sus datos: <a href="mailto:spidermxone@gmail.com">spidermxone@gmail.com</a></p>
+        <h2>4. Seguridad y Contacto</h2>
+        <p>Implementamos medidas técnicas para proteger sus datos mediante protocolos seguros (HTTPS). Para cualquier duda: <a href="mailto:spidermxone@gmail.com">spidermxone@gmail.com</a></p>
     </div>
 </body>
 </html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MisaContigo | Your Digital Missal, Android Auto & Spiritual Companion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1A237E;
+            --primary-light: #3949AB;
+            --accent: #D4AF37;
+            --bg: #FFFFFF;
+            --surface: #F8FAFC;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --glass: rgba(255, 255, 255, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+
+        /* --- Modern Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(26, 35, 126, 0.1);
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .lang-switch {
+            background: rgba(26, 35, 126, 0.08);
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            color: var(--primary) !important;
+            font-weight: 700 !important;
+        }
+
+        .nav-links a.btn-primary {
+            color: white !important;
+            background: var(--primary);
+            padding: 0.6rem 1.5rem;
+            border-radius: 10px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            background: radial-gradient(circle at top right, #E8EAF6 0%, #FFFFFF 50%);
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-badge {
+            background: var(--primary-light);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            max-width: 600px;
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .btn-download {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(26, 35, 126, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(26, 35, 126, 0.3);
+        }
+
+        /* --- Features Section --- */
+        .features {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background: var(--surface);
+            padding: 3rem 2rem;
+            border-radius: 32px;
+            transition: transform 0.4s;
+            border: 1px solid rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            background: white;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .card h3 { margin-bottom: 1rem; font-size: 1.5rem; }
+
+        /* --- Info Bar --- */
+        .info-bar {
+            background: var(--primary);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .info-bar p { max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem; opacity: 0.9; }
+
+        /* --- Footer --- */
+        footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 1px solid #eee;
+            background: var(--surface);
+        }
+
+        .footer-links { margin-bottom: 2rem; }
+        .footer-links a { color: var(--text-muted); margin: 0 1rem; text-decoration: none; font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--primary); }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index_en.html" class="logo">MisaContigo</a>
+    <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="index.html" class="lang-switch">🇪🇸 ES</a>
+        <a href="mailto:spidermxone@gmail.com" class="btn-primary">Support</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-badge">Digital Transcendence & Faith</div>
+    <h1>Your faith, always <br> with you.</h1>
+    <p>The most complete Catholic experience for Mexico and now in your car: official liturgy, hands-free Android Auto, complete seasonal guides, and family connection.</p>
+    <div class="cta-group">
+        <a href="#" class="btn-download">Download on Google Play</a>
+    </div>
+</section>
+
+<section class="features" id="features">
+    <div class="section-header">
+        <h2>A Spiritual Ecosystem</h2>
+        <p>Premium technology designed to accompany your life of grace at every moment.</p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <span class="card-icon">🚗</span>
+            <h3>Android Auto & Driving Mode</h3>
+            <p>Make the most of your time in traffic. Listen and pray the <strong>guided Holy Rosary</strong> and essential prayers through your car speakers 100% hands-free and safe.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">📅</span>
+            <h3>Mexican Feasts & Seasonal Guides</h3>
+            <p>Complete, uninterrupted seasonal guides to live traditional family devotions for Posadas, Lent, 14-Station Way of the Cross, Day of the Dead, and Our Lady of Guadalupe.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">📖</span>
+            <h3>Official Missal with Fallback</h3>
+            <p>Guaranteed access to daily readings from <strong>misal.mx</strong> (CEM). Our intelligent system ensures you always have today's liturgy, without interruptions.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">🕯️</span>
+            <h3>Collaborative Family Circle</h3>
+            <p>Unite your family in prayer. Share intention requests, light virtual candles in real-time, and join in prayer with an intelligent counter that prevents duplicate counts per user.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">⛰️</span>
+            <h3>Pilgrim's Path</h3>
+            <p>Visualize your spiritual growth. Earn grace points, level up, and walk a faith map based on your consistency in Mass and prayer.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">🇲🇽</span>
+            <h3>Mexican Saints</h3>
+            <p>Discover the heroic lives of our local saints. A detailed library with biographies, canonization dates, and high-quality sacred iconography.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">📱</span>
+            <h3>Inspiration Widget</h3>
+            <p>Bring the Word of God to your home screen. A dynamic carousel rotating between the Word of Life, Saint of the Day, and Daily Prayer.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">🖼️</span>
+            <h3>Viral Evangelization</h3>
+            <p>Generate and share beautiful <strong>blessing cards</strong>. Share the Word of Life and daily prayers with elegant designs ready for WhatsApp.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">🙏</span>
+            <h3>100+ Prayers Library</h3>
+            <p>Complete texts without ellipsis. The most beloved prayers of Mexico and the Universal Church available 100% offline.</p>
+        </div>
+    </div>
+</section>
+
+<section class="info-bar">
+    <p>MisaContigo bridges the Church's millenary tradition with cutting-edge technology to provide comfort, guidance, and community everywhere—even behind the wheel.</p>
+    <div style="font-size: 0.9rem; opacity: 0.8;">
+        <p style="font-weight: 800;">Diego Torres Barragán</p>
+        <span>Developer & Creator</span>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="mailto:spidermxone@gmail.com">Support</a>
+    </div>
+    <p style="color: var(--text-muted); font-size: 0.75rem; max-width: 600px; margin: 0 auto 1.5rem; opacity: 0.7;">
+        Liturgical readings for Mexico and 'Word of Life' texts are courtesy of misal.mx and official biblical sources. Sacred texts are property of the Mexican Bishops' Conference (CEM) and respective authors. MisaContigo is an independent non-profit evangelization platform.
+    </p>
+    <p style="color: var(--text-muted); font-size: 0.8rem;">&copy; 2026 MisaContigo. All rights reserved. <br> Mexico City, Latin America.</p>
+</footer>
+
+</body>
+</html>

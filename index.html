@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MisaContigo | Tu Misal Digital y Acompañante Espiritual</title>
+    <title>MisaContigo | Tu Misal Digital, Android Auto y Acompañante Espiritual</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
@@ -63,6 +63,11 @@
             letter-spacing: -0.5px;
         }
 
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
         .nav-links a {
             margin-left: 2rem;
             text-decoration: none;
@@ -70,6 +75,14 @@
             font-weight: 600;
             font-size: 0.9rem;
             transition: color 0.3s;
+        }
+
+        .lang-switch {
+            background: rgba(26, 35, 126, 0.08);
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            color: var(--primary) !important;
+            font-weight: 700 !important;
         }
 
         .nav-links a.btn-primary {
@@ -229,6 +242,7 @@
         <a href="#funcionalidades">Funcionalidades</a>
         <a href="privacidad.html">Privacidad</a>
         <a href="terminos.html">Términos</a>
+        <a href="index_en.html" class="lang-switch">🇬🇧 EN</a>
         <a href="mailto:spidermxone@gmail.com" class="btn-primary">Soporte</a>
     </div>
 </nav>
@@ -236,7 +250,7 @@
 <section class="hero">
     <div class="hero-badge">Trascendencia Digital y Fe</div>
     <h1>Tu fe, siempre <br> contigo.</h1>
-    <p>La experiencia católica más completa para México: liturgia oficial, conexión familiar en tiempo real y un camino de crecimiento espiritual diseñado para ti.</p>
+    <p>La experiencia católica más completa para México y ahora en tu automóvil: liturgia oficial, Android Auto manos libres, guías estacionales completas y conexión familiar.</p>
     <div class="cta-group">
         <a href="#" class="btn-download">Descargar en Google Play</a>
     </div>
@@ -245,10 +259,20 @@
 <section class="features" id="funcionalidades">
     <div class="section-header">
         <h2>Un Ecosistema Espiritual</h2>
-        <p>Tecnología premium diseñada para acompañar tu vida de gracia.</p>
+        <p>Tecnología premium diseñada para acompañar tu vida de gracia en todo momento.</p>
     </div>
 
     <div class="grid">
+        <div class="card">
+            <span class="card-icon">🚗</span>
+            <h3>Android Auto & Modo Conducción</h3>
+            <p>Aprovecha el tiempo en el tráfico. Escucha y reza el <strong>Santo Rosario guiado</strong> y oraciones esenciales a través de los altavoces de tu auto de forma 100% segura y manos libres.</p>
+        </div>
+        <div class="card">
+            <span class="card-icon">📅</span>
+            <h3>Tiempos y Fiestas de México</h3>
+            <p>Guías estacionales completas y sin interrupciones para vivir las Posadas, Cuaresma, Viacrucis de 14 estaciones, Día de Muertos y la Guadalupana en familia.</p>
+        </div>
         <div class="card">
             <span class="card-icon">📖</span>
             <h3>Misal Oficial con Fallback</h3>
@@ -256,8 +280,8 @@
         </div>
         <div class="card">
             <span class="card-icon">🕯️</span>
-            <h3>Círculo de Familia 2.0</h3>
-            <p>Une a tu familia en oración. Enciende <strong>velas virtuales</strong> en tiempo real y recibe consuelo visual al saber cuántos están intercediendo por tus intenciones.</p>
+            <h3>Círculo de Familia Colaborativo</h3>
+            <p>Une a tu familia en oración. Comparte intenciones obligatorias y elimina o únete en oración con un contador inteligente que evita duplicados por usuario.</p>
         </div>
         <div class="card">
             <span class="card-icon">⛰️</span>
@@ -280,25 +304,15 @@
             <p>Genera y comparte hermosas <strong>tarjetas de bendición</strong>. Comparte la Palabra de Vida y las oraciones del día con diseños elegantes listos para WhatsApp.</p>
         </div>
         <div class="card">
-            <span class="card-icon">🎨</span>
-            <h3>Identidad Litúrgica Viva</h3>
-            <p>El primer misal que "respira" con la Iglesia. La interfaz cambia automáticamente su color (Verde, Blanco, Rojo o Morado) según el tiempo litúrgico actual.</p>
-        </div>
-        <div class="card">
             <span class="card-icon">🙏</span>
-            <h3>100+ Oraciones Maestras</h3>
-            <p>Una biblioteca optimizada con las oraciones más queridas de México y la Iglesia Universal. Buscador instantáneo y disponible 100% offline.</p>
-        </div>
-        <div class="card">
-            <span class="card-icon">⛪</span>
-            <h3>Confesa Premium</h3>
-            <p>Guía de examen de conciencia detallada y rito oficial. Prepara tu corazón para el sacramento con una experiencia de paz y recogimiento.</p>
+            <h3>Biblioteca de 100+ Oraciones</h3>
+            <p>Textos íntegros y completos sin puntos suspensivos. Las plegarias más queridas de México y la Iglesia Universal disponibles 100% offline.</p>
         </div>
     </div>
 </section>
 
 <section class="info-bar">
-    <p>MisaContigo une la tradición milenaria de la Iglesia con la vanguardia tecnológica para brindar consuelo, guía y comunidad.</p>
+    <p>MisaContigo une la tradición milenaria de la Iglesia con la vanguardia tecnológica para brindar consuelo, guía y comunidad en todo lugar, incluso al volante.</p>
     <div style="font-size: 0.9rem; opacity: 0.8;">
         <p style="font-weight: 800;">Diego Torres Barragán</p>
         <span>Desarrollador y Creador</span>
